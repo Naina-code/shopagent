@@ -250,7 +250,7 @@ function buildResponse(userText, conversationState) {
     return {
       message: useCaseQ,
       stage: "clarifying",
-      chips: ["Under $200", "Under $500", "Under $1000", "No budget limit"],
+      chips: ["Under ₹10,000", "Under ₹25,000", "Under ₹50,000", "No budget limit"],
       newState: state
     };
   }
@@ -362,7 +362,7 @@ function getAgentResponse(userText, conversationState) {
 }
 
 // ─── UI COMPONENTS ────────────────────────────────────────────────────────────
-const formatPrice = (n) => "$" + n.toLocaleString();
+const formatPrice = (n) => "₹" + (n * 83).toLocaleString("en-IN");
 
 function ProductCard({ product, onAddToCart, inCart, onLearnMore }) {
   const [adding, setAdding] = useState(false);
